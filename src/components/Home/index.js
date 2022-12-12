@@ -35,7 +35,7 @@ export default function App() {
   return (
     <AppContainer>
       <div style={{ width: "86%", marginLeft: "7%" }}>
-        <NavBar>Aitium.AI</NavBar>
+        <NavBar>aitium.ai</NavBar>
         <Body />
       </div>
     </AppContainer>
