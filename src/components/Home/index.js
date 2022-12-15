@@ -1,17 +1,8 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import Modal from "react-modal";
-import {
-  NavBar,
-  Button,
-  Heading,
-  HeroContainer,
-  ImageContainer,
-  Paragraph,
-  AppContainer,
-} from "../common";
+import { NavBar, Button, Heading, Paragraph, AppContainer } from "../common";
 
-import backgroundRightSvg from "../../assets/background-right.svg";
 import Contact from "../Contact";
 import JoinUs from "../JoinUs";
 
@@ -21,9 +12,9 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     minWidth: 300,
+    maxWidth: 300,
     padding: "10px",
     background: "#F3F4F3",
     borderRadius: 2,
@@ -31,21 +22,27 @@ const customStyles = {
 };
 
 Modal.setAppElement("#root");
-export default function App() {
-  return (
-    <AppContainer>
-      <div style={{ width: "86%", marginLeft: "7%" }}>
-        <NavBar>aitium.ai</NavBar>
-        <Body />
-      </div>
-    </AppContainer>
-  );
-}
+
+const useStyles = createUseStyles({
+  overlayStyles: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: "rgba(0,0,0,0.6)",
+  },
+  body: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+});
 
 function Body() {
   const classes = useStyles();
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalIsOpen2, setIsOpen2] = React.useState(false);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -61,30 +58,24 @@ function Body() {
   return (
     <>
       <div className={classes.body}>
-        <HeroContainer>
-          <Heading>
-            AI DRIVEN <br />
-            REALTIME ALERTS <br />
-            AND ANALYSIS <br />
-          </Heading>
-          <Paragraph>
-            We are a stealth mode AI Startup, empowering real time Insights and
-            Threat intelligence. Get AI powered security alerts on your
-            fingertips.
-          </Paragraph>
-          <Button onClick={openModal}>CONTACT US</Button>
-          <Button outlined onClick={openModal2}>
-            JOIN MAIL LIST
-          </Button>
-        </HeroContainer>
-        <ImageContainer>
-          <img
-            src={backgroundRightSvg}
-            className={classes.img}
-            draggable="false"
-            alt="background-right"
-          />
-        </ImageContainer>
+        <Heading>
+          ACCELERATE INNOVATION <br />
+          WITH <span className="inner-text">AI</span> <br />
+        </Heading>
+        <Paragraph>
+          Focus on building innovative solutions by harnessing the power of AI
+          with our state-of-the-art{" "}
+          <span className="para-inner-text">
+            cutting edge AI models as APIs
+          </span>
+          . We are a stealth mode AI startup empowering robust APIs by using
+          cutting-edge algorithms and large datasets to train our models,
+          ensuring that they deliver accurate and reliable results.
+        </Paragraph>
+        <Button onClick={openModal}>CONTACT US</Button>
+        <Button outlined onClick={openModal2}>
+          JOIN NEWSLETTER
+        </Button>
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -130,22 +121,18 @@ function Body() {
   );
 }
 
-const useStyles = createUseStyles({
-  overlayStyles: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: "rgba(0,0,0,0.6)",
-  },
-  body: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  img: {
-    width: "100%",
-    marginTop: "-100px",
-    userSelect: "none",
-  },
-});
+function App() {
+  return (
+    <AppContainer>
+      <div style={{ width: "80%", marginLeft: "10%" }}>
+        <NavBar>
+          <span style={{ color: "#BBE903" }}>AITIUM</span>
+          <span style={{ color: "#BEBEBE" }}>.AI</span>
+        </NavBar>
+        <Body />
+      </div>
+    </AppContainer>
+  );
+}
+
+export default App;

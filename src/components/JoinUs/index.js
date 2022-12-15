@@ -63,8 +63,6 @@ export default function ({ closeModal }) {
           alert(error.message);
         }
       );
-
-    // closeModal()
   };
   return (
     <div
@@ -92,7 +90,15 @@ export default function ({ closeModal }) {
           disabled={loading}
         />
         {error && (
-          <pre style={{ marginTop: -5, textAlign: "left", color: "red" }}>
+          <pre
+            style={{
+              marginTop: -5,
+              textAlign: "left",
+              color: "red",
+              fontFamily: "Poppins",
+              fontSize: 12,
+            }}
+          >
             {error}
           </pre>
         )}
@@ -110,10 +116,13 @@ export default function ({ closeModal }) {
 }
 
 const btnStyle = {
+  width: "100%",
   borderRadius: 5,
   padding: 8,
-  margin: 0,
   marginBottom: 10,
   marginTop: 10,
-  width: "100%",
+  paddingLeft: 20,
+  paddingRight: 20,
+  color: "#fff",
+  background: "#1E1E1E",
 };

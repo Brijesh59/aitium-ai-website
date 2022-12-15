@@ -110,6 +110,7 @@ export default function ({ closeModal }) {
         }
       );
   };
+
   return (
     <div
       style={{
@@ -132,7 +133,15 @@ export default function ({ closeModal }) {
           disabled={loading}
         />
         {errorName && (
-          <pre style={{ marginTop: -5, textAlign: "left", color: "red" }}>
+          <pre
+            style={{
+              marginTop: -5,
+              textAlign: "left",
+              color: "red",
+              fontFamily: "Poppins",
+              fontSize: 12,
+            }}
+          >
             {errorName}
           </pre>
         )}
@@ -145,7 +154,15 @@ export default function ({ closeModal }) {
           disabled={loading}
         />
         {errorEmail && (
-          <pre style={{ marginTop: -5, textAlign: "left", color: "red" }}>
+          <pre
+            style={{
+              marginTop: -5,
+              textAlign: "left",
+              color: "red",
+              fontFamily: "Poppins",
+              fontSize: 12,
+            }}
+          >
             {errorEmail}
           </pre>
         )}
@@ -159,7 +176,15 @@ export default function ({ closeModal }) {
           rows="3"
         />
         {errorMessage && (
-          <pre style={{ marginTop: -5, textAlign: "left", color: "red" }}>
+          <pre
+            style={{
+              marginTop: -5,
+              textAlign: "left",
+              color: "red",
+              fontFamily: "Poppins",
+              fontSize: 12,
+            }}
+          >
             {errorMessage}
           </pre>
         )}
@@ -177,9 +202,13 @@ export default function ({ closeModal }) {
 }
 
 const btnStyle = {
+  width: "100%",
   borderRadius: 5,
   padding: 8,
-  margin: 0,
   marginBottom: 10,
   marginTop: 10,
+  paddingLeft: 20,
+  paddingRight: 20,
+  color: "#fff",
+  background: "#1E1E1E",
 };

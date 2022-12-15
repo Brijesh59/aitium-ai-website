@@ -1,19 +1,18 @@
 import React from "react";
-import Home from './Home';
+import { createGlobalStyle } from "styled-components";
 
-import { createGlobalStyle } from 'styled-components'
+import Home from "./Home";
+
 const GlobalStyles = createGlobalStyle`
   body{
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #1A1A1A;
   }
-  &::selection{
-    background: #56BBC1
-  }
-`
+`;
 
 export default function App() {
   return (
